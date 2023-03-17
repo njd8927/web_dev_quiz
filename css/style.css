@@ -1,0 +1,80 @@
+/*** RESETS ***/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+
+/*** GLOBAL CLASSES ****/
+
+.text-center {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+/* GLOBAL CLASS TARGETS ALL CLASSES - MUST ADD THE .TEXT-CENTER CLASS TO HTML (CLASS = 'TEXT-CENTER) */
+
+/*** CUSTOM STYLES ***/
+
+.main-header {
+    margin: 25px 0 45px;
+    color: red;
+}
+
+
+
+/* START BUTTON */
+.start-page #start-button {
+    padding: 10px 0;
+    min-width: 250px;
+    /* USE MIN-WIDTH OR MAX-WIDTH SO THE BUTTON CHANGES SIZE WITH THE WINDOW SIZE CHANGING */
+    font-size: 1rem;
+    background-color: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.question-display {
+    padding: 25px;
+    border: 1px solid #aaa;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.question-display #quest {
+    padding: 25px;
+
+}
+
+.question-display #timer-display {
+    font-size: 2rem;
+}
+
+.question-display #answer-display {
+    background-color: red;
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.question-display #next-button {
+    padding: 8px 35px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.question-display #next:hover {
+    background-color: gray;
+}
+
+/*** RESPONSIVE STYLES ***/

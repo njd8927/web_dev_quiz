@@ -20,7 +20,7 @@ MIT License
 
 This web application was designed with assistance from JD Tadlack, W3 Schools and MDN Web Docs: https://developer.mozilla.org/en-US/ // https://www.w3schools.com/
 
-Link to deployed webpage: 
+Link to deployed webpage: https://njd8927.github.io/web_dev_quiz/
 ## Mock-Up
 
 TThe following image demonstrates the application functionality:

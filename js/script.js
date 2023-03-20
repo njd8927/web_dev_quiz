@@ -37,16 +37,12 @@ function promptUserToRestart() {
 }
 
 //FUNCTION TO HIDE THE TIMER AND SHOW THE ANSWER AND NEXT BUTTON
-
 function showAnswer() {
     answerDisplay.textContent = currentQuestion.choices[currentQuestion.correctIndex];
     timerDisplay.classList.add('hide');
     nextBtn.classList.remove('hide');
     answerDisplay.classList.remove('hide');
-    
-    
 
-    
 
     // IF THE CURRENTQUESTIONINDEX IS EQUAL TO THE QUESTIONS ARRAY LENGTH, 
     // THEN WE STOP QUESTIONS AND CONFIRM IF THE USER WOULD LIKE TO RESTART
@@ -62,6 +58,7 @@ function showAnswer() {
 // AND COUNTS DOWN TO ZERO, THEN CALLS SHOWANSWER
 
 function startTimer() {
+    count = 10;
     timerDisplay.classList.remove('hide');
     timerDisplay.textContent = 'Count: ' + count;
     

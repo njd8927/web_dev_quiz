@@ -11,11 +11,11 @@ var choice2 = document.querySelector('#choice-2-btn');
 var choice3 = document.querySelector('#choice-3-btn');
 var choice4 = document.querySelector('#choice-4-btn');
 
-                                                                                  
+
 
 var currentQuestionIndex = 0;                                                        //CREATE A VARIABLE TO TRACK CURRENT QUESTION INDEX                                       
 
-var currentQuestion; 
+var currentQuestion;
 var timer;                                                             //CREATE A VARIABLE THAT WILL HOLD THE CURRENT QUESTION OBJECT (QUESTIONS & ANSWERS ARE THE OBJECTS)                                                    
 
 
@@ -37,8 +37,22 @@ function promptUserToRestart() {
 }
 
 //FUNCTION TO HIDE THE TIMER AND SHOW THE ANSWER AND NEXT BUTTON
-function showAnswer() {
-    answerDisplay.textContent = currentQuestion.choices[currentQuestion.correctIndex];
+function showAnswer(event) {
+    if (!event) {
+        answerDisplay.textContent = 'timeout';
+    } else {
+        console.log(event.target.textContent);
+        var i = currentQuestion.choices.indexOf(event.target.textContent);
+        console.log(i);
+        if (i == currentQuestion.correctIndex) {
+            answerDisplay.textContent = 'Correct! ' + currentQuestion.choices[currentQuestion.correctIndex];
+        } else {
+            answerDisplay.textContent = 'Incorrect! ' + currentQuestion.choices[currentQuestion.correctIndex];
+        };
+    }
+ 
+
+
     timerDisplay.classList.add('hide');
     nextBtn.classList.remove('hide');
     answerDisplay.classList.remove('hide');
@@ -61,7 +75,7 @@ function startTimer() {
     count = 10;
     timerDisplay.classList.remove('hide');
     timerDisplay.textContent = 'Count: ' + count;
-    
+
     // CREATE A SETINTERVAL AND STORE IT TO A VARIABLE THAT TRIGGERS EVERY SECOND
 
     timer = setInterval(function () {
@@ -106,7 +120,7 @@ function displayQuestion() {
     nextBtn.classList.remove('hide');
     currentQuestionIndex++;
     startTimer();
-    
+
 }
 
 
@@ -129,8 +143,5 @@ choice4.addEventListener('click', showAnswer);
 
 
 
+// CREATE FUNCTION TO ADD USER INITIALS AND LOG THEIR SCORE
 
-// WHEN THE END OF THE QUESTIONS ARRAY HAS BEEN REACHED, SHOW THE USER A CONFIRMATION
-// ASKING IF THEY WOULD LIKE TO RESTART FROM THE BEGINNING
-// IF THEY CONFIRM YES, RESET QUESTION INDEX TO 0 AND SHOW FIRST QUESTION
-// IF THEY CONFIRM NO, SHOW A GOODBYE MESSAGE

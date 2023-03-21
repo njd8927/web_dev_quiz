@@ -21,12 +21,18 @@
 
 /*** CUSTOM STYLES ***/
 
-.main-header {
-    margin: 25px 0 45px;
-    color: red;
+header {
+    background-color: #df2e38;
 }
 
+.title {
+    margin: 25px 0 45px;
+    color: black;
+}
 
+.start-page {
+    background-color: white;
+}
 
 /* START BUTTON */
 .start-page #start-button {
@@ -120,6 +126,11 @@
 
 .question-display #next:hover {
     background-color: gray;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
 }
 
 /*** RESPONSIVE STYLES ***/

@@ -10,6 +10,8 @@ var choice1 = document.querySelector('#choice-1-btn');
 var choice2 = document.querySelector('#choice-2-btn');
 var choice3 = document.querySelector('#choice-3-btn');
 var choice4 = document.querySelector('#choice-4-btn');
+var scorecard = document.querySelector('#score');
+var submitBtn = document.querySelector('#submit-button');
 
 
 
@@ -19,11 +21,12 @@ var currentQuestion;
 var timer;                                                             //CREATE A VARIABLE THAT WILL HOLD THE CURRENT QUESTION OBJECT (QUESTIONS & ANSWERS ARE THE OBJECTS)                                                    
 
 
-var count = 10;                                                                     //CREATE A VARIABLE TO STORE THE CURRENT TIMER COUNT
+var count = 30;                                                                     //CREATE A VARIABLE TO STORE THE CURRENT TIMER COUNT
 
 //FUNCTION THAT IS CALLED WHEN THE END OF THE QUESTIONS ARRAY IS REACHED THAT PROMPTS USER TO RESTART
 
 function promptUserToRestart() {
+    scorecard.classList.remove('hide');
     var userChoice = confirm('Would you like to restart?');
 
     if (userChoice) {
@@ -34,7 +37,7 @@ function promptUserToRestart() {
         answerDisplay.classList.add('hide');
         nextBtn.classList.add('hide');
     }
-}
+};
 
 //FUNCTION TO HIDE THE TIMER AND SHOW THE ANSWER AND NEXT BUTTON
 function showAnswer(event) {
@@ -66,19 +69,20 @@ function showAnswer(event) {
         nextBtn.classList.add('hide');
         promptUserToRestart();
     }
-}
+};
 
 // CREATE A FUNCTION THAT STARTS A TIMER AT 10 SECONDS 
 // AND COUNTS DOWN TO ZERO, THEN CALLS SHOWANSWER
 
 function startTimer() {
-    count = 10;
+    count = 30;
     timerDisplay.classList.remove('hide');
     timerDisplay.textContent = 'Count: ' + count;
 
     // CREATE A SETINTERVAL AND STORE IT TO A VARIABLE THAT TRIGGERS EVERY SECOND
 
     timer = setInterval(function () {
+      
         // DECREASE COUNT BY ONE
         count--;
         // SET TIMER DISPLAY TO THE COUNT VARIABLE
@@ -87,11 +91,11 @@ function startTimer() {
         if (count <= 0) {
             // !COUNT = NOT QUAL
             clearInterval(timer);
-            count = 10;
+            count = 30;
             showAnswer();
         }
     }, 1000);
-}
+};
 
 // CREATE A FUNCTION THAT GRABS THE CURRENT QUESTION OBJECT 
 // AND DISPLAYS THE QUESTION TO THE WINDOW
@@ -121,7 +125,7 @@ function displayQuestion() {
     currentQuestionIndex++;
     startTimer();
 
-}
+};
 
 
 
@@ -130,7 +134,9 @@ function displayQuestion() {
 function startQuestions() {
     startBtn.classList.add('hide');
     displayQuestion();
-}
+};
+
+
 
 // WHEN USER CLICKS START BUTTON, SHOW THE FIRST QUESTION
 
@@ -140,8 +146,23 @@ choice1.addEventListener('click', showAnswer);
 choice2.addEventListener('click', showAnswer);
 choice3.addEventListener('click', showAnswer);
 choice4.addEventListener('click', showAnswer);
+submitBtn.addEventListener('click', saveScore);
 
 
 
-// CREATE FUNCTION TO ADD USER INITIALS AND LOG THEIR SCORE
+// CREATE FUNCTION TO LOG USER SCORE
 
+function saveScore () {
+    scorecard.classList.remove('hide');
+    var userScore = document.querySelector('#scorecard').value;
+    localStorage.setItem(userScore);
+};
+
+// CREATE FUNCTION FOR USER TO SEE THEIR SCORE HISTORY IN LOCAL STORAGE
+
+function getScore () {
+    var userScore = localStorage.getItem(userScore);
+    return userScore;
+};
+
+// saveScore();

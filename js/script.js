@@ -21,7 +21,7 @@ var currentQuestion;
 var timer;                                                             //CREATE A VARIABLE THAT WILL HOLD THE CURRENT QUESTION OBJECT (QUESTIONS & ANSWERS ARE THE OBJECTS)                                                    
 
 
-var count = 30;                                                                     //CREATE A VARIABLE TO STORE THE CURRENT TIMER COUNT
+var count = 45;                                                                     //CREATE A VARIABLE TO STORE THE CURRENT TIMER COUNT
 
 //FUNCTION THAT IS CALLED WHEN THE END OF THE QUESTIONS ARRAY IS REACHED THAT PROMPTS USER TO RESTART
 
@@ -76,7 +76,6 @@ function showAnswer(event) {
 // AND COUNTS DOWN TO ZERO, THEN CALLS SHOWANSWER
 
 function startTimer() {
-    // count = 30;
     timerDisplay.classList.remove('hide');
     timerDisplay.textContent = 'Count: ' + count;
 
@@ -92,7 +91,7 @@ function startTimer() {
         if (count <= 0) {
             // !COUNT = NOT QUAL
             clearInterval(timer);
-            count = 30;
+            count = 45;
             showAnswer();
         }
     }, 1000);

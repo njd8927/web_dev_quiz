@@ -51,6 +51,7 @@ function showAnswer(event) {
             answerDisplay.textContent = 'Correct! ' + currentQuestion.choices[currentQuestion.correctIndex];
         } else {
             answerDisplay.textContent = 'Incorrect! ' + currentQuestion.choices[currentQuestion.correctIndex];
+            count-=5;
         };
     }
  
@@ -75,7 +76,7 @@ function showAnswer(event) {
 // AND COUNTS DOWN TO ZERO, THEN CALLS SHOWANSWER
 
 function startTimer() {
-    count = 30;
+    // count = 30;
     timerDisplay.classList.remove('hide');
     timerDisplay.textContent = 'Count: ' + count;
 
@@ -151,18 +152,29 @@ submitBtn.addEventListener('click', saveScore);
 
 
 // CREATE FUNCTION TO LOG USER SCORE
-
+var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 function saveScore () {
-    scorecard.classList.remove('hide');
-    var userScore = document.querySelector('#scorecard').value;
-    localStorage.setItem(userScore);
+    // scorecard.classList.remove('hide');
+    var userInitials = document.querySelector('#user-initials').value;
+    var data = {
+        initials: userInitials,
+        score: count
+    }; 
+    highScores.push(data);
+    localStorage.setItem("highscores", JSON.stringify(highScores));
+    getScore();
 };
 
 // CREATE FUNCTION FOR USER TO SEE THEIR SCORE HISTORY IN LOCAL STORAGE
 
 function getScore () {
-    var userScore = localStorage.getItem(userScore);
-    return userScore;
+    var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
+    var ul = document.createElement('ul');
+    for (var i=0; i < highScores.length; i++){
+        var li = document.createElement('li');
+        li.textContent = `${highScores[i].initials} : ${highScores[i].score}`
+        ul.appendChild(li)
+    }
+    scorecard.appendChild(ul);
 };
 
-// saveScore();

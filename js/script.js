@@ -1,3 +1,4 @@
+// CREATE VARIABLES TO TARGET HTML ID'S AND CLASSES
 var mainHeader = document.querySelector('.main-header');
 var startPage = document.querySelector('.start-page');
 var startBtn = document.querySelector('#start-button');
@@ -14,17 +15,17 @@ var scorecard = document.querySelector('#score');
 var submitBtn = document.querySelector('#submit-button');
 
 
+//  VARIABLE TO TRACK CURRENT QUESTION INDEX    
+var currentQuestionIndex = 0;                                                                                          
 
-var currentQuestionIndex = 0;                                                        //CREATE A VARIABLE TO TRACK CURRENT QUESTION INDEX                                       
-
+// VARIABLE THAT WILL HOLD THE CURRENT QUESTION OBJECT (QUESTIONS & ANSWERS ARE THE OBJECTS)
 var currentQuestion;
-var timer;                                                             //CREATE A VARIABLE THAT WILL HOLD THE CURRENT QUESTION OBJECT (QUESTIONS & ANSWERS ARE THE OBJECTS)                                                    
+var timer;                                                                                                                 
 
-
-var count = 45;                                                                     //CREATE A VARIABLE TO STORE THE CURRENT TIMER COUNT
+// VAR TO SET THE QUIZ TIMER TO 45 SECONDS TO START
+var count = 45;              
 
 //FUNCTION THAT IS CALLED WHEN THE END OF THE QUESTIONS ARRAY IS REACHED THAT PROMPTS USER TO RESTART
-
 function promptUserToRestart() {
     scorecard.classList.remove('hide');
     var userChoice = confirm('Would you like to restart?');
@@ -72,15 +73,13 @@ function showAnswer(event) {
     }
 };
 
-// CREATE A FUNCTION THAT STARTS A TIMER AT 10 SECONDS 
-// AND COUNTS DOWN TO ZERO, THEN CALLS SHOWANSWER
 
+// FUNCTION TO GENERATE TIMER
 function startTimer() {
     timerDisplay.classList.remove('hide');
     timerDisplay.textContent = 'Count: ' + count;
 
-    // CREATE A SETINTERVAL AND STORE IT TO A VARIABLE THAT TRIGGERS EVERY SECOND
-
+// SETINTERVAL AND STORE IT TO A VARIABLE THAT TRIGGERS EVERY SECOND
     timer = setInterval(function () {
       
         // DECREASE COUNT BY ONE
@@ -97,7 +96,7 @@ function startTimer() {
     }, 1000);
 };
 
-// CREATE A FUNCTION THAT GRABS THE CURRENT QUESTION OBJECT 
+// FUNCTION THAT GRABS THE CURRENT QUESTION OBJECT 
 // AND DISPLAYS THE QUESTION TO THE WINDOW
 
 function displayQuestion() {
@@ -150,10 +149,9 @@ submitBtn.addEventListener('click', saveScore);
 
 
 
-// CREATE FUNCTION TO LOG USER SCORE
+// FUNCTION TO LOG USER INITIALS AND SCORES IN LOCAL STORAGE
 var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 function saveScore () {
-    // scorecard.classList.remove('hide');
     var userInitials = document.querySelector('#user-initials').value;
     var data = {
         initials: userInitials,
@@ -164,8 +162,8 @@ function saveScore () {
     getScore();
 };
 
-// CREATE FUNCTION FOR USER TO SEE THEIR SCORE HISTORY IN LOCAL STORAGE
 
+// FUNCTION FOR USER TO SEE THEIR SCORE HISTORY IN LOCAL STORAGE AND BROWSER
 function getScore () {
     var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
     var ul = document.createElement('ul');

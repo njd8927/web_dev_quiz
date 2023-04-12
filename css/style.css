@@ -6,8 +6,6 @@
     font-family: sans-serif;
 }
 
-
-
 /*** GLOBAL CLASSES ****/
 
 .text-center {
@@ -99,8 +97,6 @@ header {
 
 }
 
-
-
 .question-display #timer-display {
     font-size: 2rem;
     padding: 20px;
@@ -129,13 +125,10 @@ header {
 }
 
 footer {
-    /* display: flex;
-    justify-content: center; */
     position: fixed;
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    
 }
 
 /*** RESPONSIVE STYLES ***/

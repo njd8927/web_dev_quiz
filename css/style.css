@@ -4,34 +4,25 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-}
-
+};
 /*** GLOBAL CLASSES ****/
-
 .text-center {
     text-align: center;
-}
-
+};
 .hide {
     display: none;
-}
-/* GLOBAL CLASS TARGETS ALL CLASSES - MUST ADD THE .TEXT-CENTER CLASS TO HTML (CLASS = 'TEXT-CENTER) */
-
+};
 /*** CUSTOM STYLES ***/
-
 header {
     background-color: #df2e38;
-}
-
+};
 .title {
     margin: 25px 0 45px;
     color: black;
-}
-
+};
 .start-page {
     background-color: white;
-}
-
+};
 /* START BUTTON */
 .start-page #start-button {
     padding: 10px 0;
@@ -43,20 +34,16 @@ header {
     color: white;
     cursor: pointer;
     font-size: 35pz;
-}
-
+};
 .question-display {
     padding: 25px;
     border: 1px solid #aaa;
     max-width: 500px;
     margin: 0 auto;
-}
-
+};
 .question-display #quest {
     padding: 25px;
-
-}
-
+};
 .question-display #choice-1-btn {
     min-width: 250px;
     color: black;
@@ -64,9 +51,7 @@ header {
     cursor: pointer;
     font-size: 1rem;
     padding: 8px 35px;
-
-}
-
+};
 .question-display #choice-2-btn {
     min-width: 250px;
     color: black;
@@ -74,9 +59,7 @@ header {
     cursor: pointer;
     font-size: 1rem;
     padding: 8px 35px;
-
-}
-
+};
 .question-display #choice-3-btn {
     min-width: 250px;
     color: black;
@@ -84,9 +67,7 @@ header {
     cursor: pointer;
     font-size: 1rem;
     padding: 8px 35px;
-
-}
-
+};
 .question-display #choice-4-btn {
     min-width: 250px;
     color: black;
@@ -94,21 +75,17 @@ header {
     cursor: pointer;
     font-size: 1rem;
     padding: 8px 35px;
-
-}
-
+};
 .question-display #timer-display {
     font-size: 2rem;
     padding: 20px;
-}
-
+};
 .question-display #answer-display {
     background-color: red;
     padding: 20px;
     color: white;
     margin-top: 20px;
-}
-
+};
 .question-display #next-button {
     padding: 8px 35px;
     font-size: 1rem;
@@ -118,17 +95,13 @@ header {
     border: none;
     cursor: pointer;
     margin-top: 20px;
-}
-
+};
 .question-display #next:hover {
     background-color: gray;
-}
-
+};
 footer {
     position: fixed;
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-}
-
-/*** RESPONSIVE STYLES ***/
+};

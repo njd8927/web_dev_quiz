@@ -24,7 +24,7 @@ This project is intended to provide the user with a quiz to challenge their web 
 For installation instructions, please see the project github repository: https://github.com/njd8927/web_dev_quiz
 
 ## Usage
-To initialize application, please visit the deployed application's webpage URL: 
+To initialize application, please visit the deployed application's webpage URL: https://njd8927.github.io/web_dev_quiz/
 
 ## Contributions
 This project was developed with assistance from JD Tadlock, Armando Osario, Andres Long, https://www.stackoverflow.com and MDN Web Docs.
